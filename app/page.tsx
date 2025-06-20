@@ -9,7 +9,7 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <header className="container mx-auto py-6 px-4 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <img src="/PokeScanDexWebsite/pokescandex-logo.png" alt="PokeScanDex Logo" className="h-8 w-8" />
+          <img src="/pokescandex-logo.png" alt="PokeScanDex Logo" className="h-8 w-8" />
           <span className="font-bold text-xl">PokeScanDex</span>
         </div>
         <ModeToggle />
@@ -19,7 +19,7 @@ export default function Home() {
         <section className="py-12 md:py-24 lg:py-32 flex flex-col items-center text-center">
           <div className="flex flex-col items-center mb-6">
             <img
-              src="/PokeScanDexWebsite/pokescandex-logo.png"
+              src="/pokescandex-logo.png"
               alt="PokeScanDex Logo"
               className="h-24 w-24 rounded-2xl mb-4 shadow-lg"
             />
@@ -37,7 +37,7 @@ export default function Home() {
               className="transition-transform hover:scale-105"
             >
               <img
-                src="/PokeScanDexWebsite/google-play-badge.png"
+                src="/google-play-badge.png"
                 alt="Get it on Google Play"
                 className="h-14 w-auto"
               />
@@ -109,7 +109,7 @@ export default function Home() {
               className="transition-transform hover:scale-105"
             >
               <img
-                src="/PokeScanDexWebsite/google-play-badge.png"
+                src="/google-play-badge.png"
                 alt="Get it on Google Play"
                 className="h-14 w-auto"
               />
