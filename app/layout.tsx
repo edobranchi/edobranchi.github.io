@@ -7,14 +7,14 @@ export const metadata = {
   description: "Scan and manage your Pokémon card collection with live prices and stats!",
   icons: {
     icon: [
-      { url: "/PokeScanDexWebsite/pokescandex-logo.png", sizes: "any" },
-      { url: "/PokeScanDexWebsite/pokescandex-logo.png", sizes: "16x16", type: "image/png" },
-      { url: "/PokeScanDexWebsite/pokescandex-logo.png", sizes: "32x32", type: "image/png" },
+      { url: "/pokescandex-logo.png", sizes: "any" },
+      { url: "/pokescandex-logo.png", sizes: "16x16", type: "image/png" },
+      { url: "/pokescandex-logo.png", sizes: "32x32", type: "image/png" },
     ],
-    apple: [{ url: "/PokeScanDexWebsite/pokescandex-logo.png", sizes: "180x180" }],
+    apple: [{ url: "/pokescandex-logo.png", sizes: "180x180" }],
     other: [
-      { url: "/PokeScanDexWebsite/pokescandex-logo.png", sizes: "192x192", type: "image/png" },
-      { url: "/PokeScanDexWebsite/pokescandex-logo.png", sizes: "512x512", type: "image/png" },
+      { url: "/pokescandex-logo.png", sizes: "192x192", type: "image/png" },
+      { url: "/pokescandex-logo.png", sizes: "512x512", type: "image/png" },
     ],
   },
 }
