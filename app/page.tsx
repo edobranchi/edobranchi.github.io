@@ -1,138 +1,121 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ModeToggle } from "@/components/mode-toggle"
 import { AppCarousel } from "@/components/app-carousel"
-import { Camera, Database, TrendingUp } from "lucide-react"
+import { ModeToggle } from "@/components/mode-toggle"
+import { Camera, ChartNoAxesCombined, Layers3, PackageOpen, Sparkles } from "lucide-react"
 import Link from "next/link"
+
+const playStoreUrl = "https://play.google.com/store/apps/details?id=com.EBDev.pokescandex"
+
+const features = [
+  { icon: Camera, title: "Scan cards fast", text: "Point your camera at a card, identify it, and jump straight into the details." },
+  { icon: Layers3, title: "Track your collection", text: "Browse sets, see what you own, and spot what is still missing." },
+  { icon: ChartNoAxesCombined, title: "Watch portfolio value", text: "Follow collection value, market movers, and your most valuable cards." },
+  { icon: PackageOpen, title: "Track sealed products", text: "Keep sealed products alongside cards in one collection." },
+]
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
-      <header className="container mx-auto py-6 px-4 flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <img src="/pokescandex-logo.png" alt="PokeScanDex Logo" className="h-8 w-8" />
-          <span className="font-bold text-xl">PokeScanDex</span>
+    <div className="min-h-screen bg-background text-foreground">
+      <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
+        <div className="container mx-auto flex items-center justify-between px-4 py-4">
+          <Link href="/" className="flex items-center gap-3">
+            <img src="/pokescandex-logo.png" alt="PokeScanDex" className="h-10 w-10 rounded-xl shadow-sm" />
+            <span className="text-lg font-semibold tracking-tight">PokeScanDex</span>
+          </Link>
+          <div className="flex items-center gap-4">
+            <Link href="#features" className="hidden text-sm text-muted-foreground hover:text-foreground sm:inline">Features</Link>
+            <Link href="#app" className="hidden text-sm text-muted-foreground hover:text-foreground sm:inline">App</Link>
+            <ModeToggle />
+          </div>
         </div>
-        <ModeToggle />
       </header>
 
-      <main className="container mx-auto px-4 py-12">
-        <section className="py-12 md:py-24 lg:py-32 flex flex-col items-center text-center">
-          <div className="flex flex-col items-center mb-6">
-            <img
-              src="/pokescandex-logo.png"
-              alt="PokeScanDex Logo"
-              className="h-24 w-24 rounded-2xl mb-4 shadow-lg"
-            />
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter">PokeScanDex</h1>
+      <main>
+        <section className="container mx-auto grid items-center gap-14 px-4 py-16 lg:grid-cols-[1.05fr_.95fr] lg:py-24">
+          <div>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+              <Sparkles className="h-4 w-4" /> Built for Pokémon TCG collectors
+            </div>
+            <h1 className="max-w-3xl text-5xl font-black tracking-[-0.04em] sm:text-6xl lg:text-7xl">
+              Scan less. <span className="block bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-transparent">Collect smarter.</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
+              Scan cards, browse sets, track sealed products, and follow your collection value from one focused Android app.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link href={playStoreUrl} target="_blank" rel="noopener noreferrer">
+                <img src="/google-play-badge.png" alt="Get PokeScanDex on Google Play" className="h-16 w-auto" />
+              </Link>
+              <span className="text-sm text-muted-foreground">Available on Android</span>
+            </div>
+            <div className="mt-10 grid gap-3 sm:grid-cols-3">
+              {[
+                ["Fast", "Camera-first scanning"],
+                ["Organized", "Cards, sets & sealed"],
+                ["Useful", "Portfolio & market data"],
+              ].map(([a,b]) => (
+                <div key={a} className="rounded-2xl border border-border/70 bg-card/80 p-4 shadow-sm">
+                  <div className="font-semibold">{a}</div>
+                  <div className="mt-1 text-sm text-muted-foreground">{b}</div>
+                </div>
+              ))}
+            </div>
           </div>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-[800px] mb-8">
-            Collect, scan, and track your Pokémon cards like never before! This powerful and fast Pokémon card
-            collection manager is designed for serious collectors and casual fans alike.
-          </p>
-          <div className="flex flex-col gap-4 items-center">
-            <Link
-              href="https://play.google.com/store/apps/details?id=com.EBDev.pokescandex"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-transform hover:scale-105"
-            >
-              <img
-                src="/google-play-badge.png"
-                alt="Get it on Google Play"
-                className="h-14 w-auto"
-              />
-            </Link>
+
+          <div className="relative mx-auto w-full max-w-[480px]">
+            <div className="absolute -inset-10 -z-10 rounded-full bg-primary/15 blur-3xl" />
+            <div className="rounded-[2rem] border border-border/70 bg-card/90 p-4 shadow-2xl">
+              <img src="/scan-fresh.webp" alt="PokeScanDex live card scanner" className="w-full rounded-[1.5rem]" />
+            </div>
           </div>
         </section>
 
-        <section className="py-12 md:py-24">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">See PokeScanDex in Action</h2>
+        <section id="features" className="border-y border-border/60 bg-muted/30">
+          <div className="container mx-auto px-4 py-20">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-sm font-semibold uppercase tracking-[.2em] text-primary">Everything in one place</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">A better collecting workflow</h2>
+            </div>
+            <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {features.map(({icon: Icon,title,text}) => (
+                <article key={title} className="rounded-3xl border border-border/70 bg-card p-6 shadow-sm">
+                  <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="text-lg font-semibold">{title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground">{text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="app" className="container mx-auto px-4 py-20">
+          <div className="mx-auto mb-10 max-w-2xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[.2em] text-primary">Inside PokeScanDex</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">See the app in action</h2>
+            <p className="mt-4 text-muted-foreground">Scanning, sets, pricing, and collection management in one place.</p>
+          </div>
           <AppCarousel />
         </section>
 
-        <section id="features" className="py-12 md:py-24">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Key Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card>
-              <CardHeader>
-                <Camera className="h-8 w-8 text-primary mb-2" />
-                <CardTitle>Card Recognition</CardTitle>
-                <CardDescription>Instantly identify any Pokémon card with your camera.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  Simply point your camera at any Pokémon card and our advanced AI will instantly recognize and identify
-                  it, adding it to your collection with all the details.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <Database className="h-8 w-8 text-primary mb-2" />
-                <CardTitle>Complete Set Database</CardTitle>
-                <CardDescription>Browse all Pokémon sets ever released.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  Explore the complete database of every Pokémon TCG set from Base Set to the latest releases. Track
-                  your collection progress and discover new cards.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <TrendingUp className="h-8 w-8 text-primary mb-2" />
-                <CardTitle>Real-Time Price Tracking</CardTitle>
-                <CardDescription>Track prices from Cardmarket and TCGplayer.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  Stay updated with real-time market prices from major platforms like Cardmarket and TCGplayer to make
-                  informed buying and selling decisions.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        <section className="py-12 md:py-24 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl text-muted-foreground max-w-[600px] mx-auto mb-8">
-            Join thousands of Pokémon card collectors who have revolutionized their collection management with
-            PokeScanDex.
-          </p>
-          <div className="flex justify-center">
-            <Link
-              href="https://play.google.com/store/apps/details?id=com.EBDev.pokescandex"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-transform hover:scale-105"
-            >
-              <img
-                src="/google-play-badge.png"
-                alt="Get it on Google Play"
-                className="h-14 w-auto"
-              />
+        <section className="container mx-auto px-4 pb-24">
+          <div className="overflow-hidden rounded-[2rem] border border-primary/20 bg-gradient-to-br from-primary/10 to-violet-500/10 px-6 py-12 text-center">
+            <h2 className="text-3xl font-bold">Your collection, always with you</h2>
+            <p className="mx-auto mt-4 max-w-xl text-muted-foreground">Download PokeScanDex and start organizing your Pokémon TCG collection.</p>
+            <Link href={playStoreUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-block">
+              <img src="/google-play-badge.png" alt="Get PokeScanDex on Google Play" className="h-16 w-auto" />
             </Link>
           </div>
         </section>
       </main>
 
-      <footer className="border-t py-6">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} PokeScanDex. All rights reserved.
-          </p>
-          <div className="flex gap-6">
-            <Link
-              href="https://github.com/edobranchi/PokeScanDexPrivacyPolicy"
-              className="text-sm text-muted-foreground hover:text-foreground"
-            >
-              Privacy Policy
-            </Link>
-            <a href="mailto:pokescandex@gmail.com" className="text-sm text-muted-foreground hover:text-foreground">
-              pokescandex@gmail.com
-            </a>
+      <footer className="border-t border-border/60">
+        <div className="container mx-auto flex flex-col gap-4 px-4 py-8 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
+          <p>© {new Date().getFullYear()} PokeScanDex</p>
+          <div className="flex flex-wrap gap-6">
+            <Link href="https://github.com/edobranchi/PokeScanDexPrivacyPolicy" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Privacy Policy</Link>
+            <a href="mailto:pokescandex@gmail.com" className="hover:text-foreground">Contact</a>
+            <Link href="/app-ads.txt" className="hover:text-foreground">app-ads.txt</Link>
           </div>
         </div>
       </footer>

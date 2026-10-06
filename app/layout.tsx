@@ -1,29 +1,25 @@
+import type { Metadata } from "next"
 import type React from "react"
 import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
-export const metadata = {
-  title: "PokeScanDex",
-  description: "Scan and manage your Pokémon card collection with live prices and stats!",
-  icons: {
-    icon: [
-      { url: "/pokescandex-logo.png", sizes: "any" },
-      { url: "/pokescandex-logo.png", sizes: "16x16", type: "image/png" },
-      { url: "/pokescandex-logo.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [{ url: "/pokescandex-logo.png", sizes: "180x180" }],
-    other: [
-      { url: "/pokescandex-logo.png", sizes: "192x192", type: "image/png" },
-      { url: "/pokescandex-logo.png", sizes: "512x512", type: "image/png" },
-    ],
+export const metadata: Metadata = {
+  title: "PokeScanDex — Pokémon Card Scanner & Collection Tracker",
+  description: "Scan Pokémon cards, browse sets, track sealed products, manage your collection, and follow portfolio value with PokeScanDex.",
+  metadataBase: new URL("https://edobranchi.github.io"),
+  alternates: { canonical: "/" },
+  icons: { icon: "/pokescandex-logo.png", apple: "/pokescandex-logo.png" },
+  openGraph: {
+    title: "PokeScanDex",
+    description: "Scan, organize, and track your Pokémon TCG collection.",
+    url: "https://edobranchi.github.io",
+    siteName: "PokeScanDex",
+    type: "website",
+    images: [{ url: "/scan-fresh.webp", alt: "PokeScanDex app scanner" }],
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
