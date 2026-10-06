@@ -94,7 +94,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="container mx-auto px-4 pb-24">
+        <section className="container mx-auto px-4 pb-24" style="padding-top: 96px;">
           <div className="overflow-hidden rounded-[2rem] border border-primary/20 bg-gradient-to-br from-primary/10 to-violet-500/10 px-6 py-12 text-center">
             <h2 className="text-3xl font-bold">Your collection, always with you</h2>
             <p className="mx-auto mt-4 max-w-xl text-muted-foreground">Download PokeScanDex and start organizing your Pokémon TCG collection.</p>
