@@ -22,13 +22,13 @@ export function AppCarousel() {
   const shot = shots[index]
 
   return (
-    <div className="mx-auto max-w-5xl">
-      <div className="rounded-[2rem] border border-border/70 bg-card/80 p-5 shadow-xl sm:p-8">
-        <div className="flex items-center justify-center gap-4 sm:gap-8">
+    <div className="w-full">
+      <div className="rounded-[2rem] border border-border/70 bg-card/90 p-4 shadow-2xl backdrop-blur sm:p-5">
+        <div className="flex items-center justify-center gap-3">
           <button
             onClick={prev}
             aria-label="Previous screenshot"
-            className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-full border bg-background hover:bg-muted sm:flex"
+            className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-full border bg-background/90 hover:bg-muted md:flex"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -37,7 +37,7 @@ export function AppCarousel() {
             <img
               src={shot.src}
               alt={shot.alt}
-              className="mx-auto max-h-[680px] w-auto max-w-full object-contain"
+              className="mx-auto max-h-[640px] w-auto max-w-full object-contain"
             />
             <h3 className="mt-5 text-lg font-semibold">{shot.title}</h3>
           </div>
@@ -45,7 +45,7 @@ export function AppCarousel() {
           <button
             onClick={next}
             aria-label="Next screenshot"
-            className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-full border bg-background hover:bg-muted sm:flex"
+            className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-full border bg-background/90 hover:bg-muted md:flex"
           >
             <ChevronRight className="h-5 w-5" />
           </button>

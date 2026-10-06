@@ -41,11 +41,18 @@ export default function Home() {
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
               Scan cards, browse sets, track sealed products, and follow your collection value from one focused Android app.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link href={playStoreUrl} target="_blank" rel="noopener noreferrer">
+            <div className="mt-8 flex flex-wrap items-start gap-4">
+              <div className="flex flex-col items-center">
+                <img
+                  src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+                  alt="Download on the App Store"
+                  className="h-16 w-auto"
+                />
+                <span className="mt-1 text-xs font-medium text-muted-foreground">Soon</span>
+              </div>
+              <Link href={playStoreUrl} target="_blank" rel="noopener noreferrer" className="inline-flex">
                 <img src="/google-play-badge.png" alt="Get PokeScanDex on Google Play" className="h-16 w-auto" />
               </Link>
-              <span className="text-sm text-muted-foreground">Available on Android</span>
             </div>
             <div className="mt-10 grid gap-3 sm:grid-cols-3">
               {[
@@ -61,11 +68,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[480px]">
+          <div className="relative mx-auto w-full max-w-[520px]">
             <div className="absolute -inset-10 -z-10 rounded-full bg-primary/15 blur-3xl" />
-            <div className="rounded-[2rem] border border-border/70 bg-card/90 p-4 shadow-2xl">
-              <img src="/homepage.png" alt="PokeScanDex portfolio dashboard" className="w-full object-contain" />
-            </div>
+            <AppCarousel />
           </div>
         </section>
 
@@ -89,22 +94,23 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="app" className="container mx-auto px-4 py-20">
-          <div className="mx-auto mb-10 max-w-2xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[.2em] text-primary">Inside PokeScanDex</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">See the app in action</h2>
-            <p className="mt-4 text-muted-foreground">Scanning, sets, pricing, and collection management in one place.</p>
-          </div>
-          <AppCarousel />
-        </section>
-
         <section className="container mx-auto px-4 pb-24">
           <div className="overflow-hidden rounded-[2rem] border border-primary/20 bg-gradient-to-br from-primary/10 to-violet-500/10 px-6 py-12 text-center">
             <h2 className="text-3xl font-bold">Your collection, always with you</h2>
             <p className="mx-auto mt-4 max-w-xl text-muted-foreground">Download PokeScanDex and start organizing your Pokémon TCG collection.</p>
-            <Link href={playStoreUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-block">
-              <img src="/google-play-badge.png" alt="Get PokeScanDex on Google Play" className="h-16 w-auto" />
-            </Link>
+            <div className="mt-7 flex flex-wrap items-start justify-center gap-4">
+              <div className="flex flex-col items-center">
+                <img
+                  src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+                  alt="Download on the App Store"
+                  className="h-16 w-auto"
+                />
+                <span className="mt-1 text-xs font-medium text-muted-foreground">Soon</span>
+              </div>
+              <Link href={playStoreUrl} target="_blank" rel="noopener noreferrer" className="inline-flex">
+                <img src="/google-play-badge.png" alt="Get PokeScanDex on Google Play" className="h-16 w-auto" />
+              </Link>
+            </div>
           </div>
         </section>
       </main>
