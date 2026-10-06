@@ -64,7 +64,7 @@ export default function Home() {
           <div className="relative mx-auto w-full max-w-[480px]">
             <div className="absolute -inset-10 -z-10 rounded-full bg-primary/15 blur-3xl" />
             <div className="rounded-[2rem] border border-border/70 bg-card/90 p-4 shadow-2xl">
-              <img src="/scan-fresh.webp" alt="PokeScanDex live card scanner" className="w-full rounded-[1.5rem]" />
+              <img src="/homepage.png" alt="PokeScanDex portfolio dashboard" className="w-full object-contain" />
             </div>
           </div>
         </section>
