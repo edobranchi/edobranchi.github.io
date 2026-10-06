@@ -1,3 +1,4 @@
+// Website refresh in progress
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ModeToggle } from "@/components/mode-toggle"
 import { AppCarousel } from "@/components/app-carousel"
