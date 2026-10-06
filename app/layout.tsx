@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: "https://edobranchi.github.io",
     siteName: "PokeScanDex",
     type: "website",
-    images: [{ url: "/scan-fresh.webp", alt: "PokeScanDex app scanner" }],
+    images: [{ url: "/homepage.png", alt: "PokeScanDex portfolio dashboard" }],
   },
 }
 
