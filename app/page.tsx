@@ -1,14 +1,14 @@
 import { AppCarousel } from "@/components/app-carousel"
 import { ModeToggle } from "@/components/mode-toggle"
-import { Camera, ChartNoAxesCombined, Layers3, PackageOpen, Sparkles } from "lucide-react"
+import { Camera, Database, PackageOpen, Sparkles, TrendingUp } from "lucide-react"
 import Link from "next/link"
 
 const playStoreUrl = "https://play.google.com/store/apps/details?id=com.EBDev.pokescandex"
 
 const features = [
   { icon: Camera, title: "Scan cards fast", text: "Point your camera at a card, identify it, and jump straight into the details." },
-  { icon: Layers3, title: "Track your collection", text: "Browse sets, see what you own, and spot what is still missing." },
-  { icon: ChartNoAxesCombined, title: "Watch portfolio value", text: "Follow collection value, market movers, and your most valuable cards." },
+  { icon: Database, title: "Track your collection", text: "Browse sets, see what you own, and spot what is still missing." },
+  { icon: TrendingUp, title: "Watch portfolio value", text: "Follow collection value, market movers, and your most valuable cards." },
   { icon: PackageOpen, title: "Track sealed products", text: "Keep sealed products alongside cards in one collection." },
 ]
 
