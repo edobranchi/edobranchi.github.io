@@ -119,7 +119,7 @@ export default function Home() {
         <div className="container mx-auto flex flex-col gap-4 px-4 py-8 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} PokeScanDex</p>
           <div className="flex flex-wrap gap-6">
-            <Link href="https://github.com/edobranchi/PokeScanDexPrivacyPolicy" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Privacy Policy</Link>
+            <Link href="/privacy/" className="hover:text-foreground">Privacy Policy</Link>
             <a href="mailto:pokescandex@gmail.com" className="hover:text-foreground">Contact</a>
             <Link href="/app-ads.txt" className="hover:text-foreground">app-ads.txt</Link>
           </div>
